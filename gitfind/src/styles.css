@@ -6,3 +6,8 @@
 body{
     background-color: #1D2128;
 }
+
+hr {
+    background-color: #E5E5E533;
+    border: 1px solid #E5E5E533;
+}
