@@ -19,6 +19,10 @@ function App() {
               className="profile" 
               alt="imagem de perfil"
             />
+            <div>
+              <h3> Alyson Jhones </h3>
+              <p> Descrição </p>
+            </div>
           </div>
         </div>
       </div>
