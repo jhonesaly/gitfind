@@ -7,11 +7,18 @@ function App() {
     <div className="App">
       <Header />
       <div className="conteudo">
-        <img src={background} className="background" alt="background app"/>
+        <img src={background} className="background" alt="imagem de fundo"/>
         <div className="info">
           <div>
             <input name="usuario" placeholder="@username"/>
             <button>Buscar</button>
+          </div>
+          <div className="perfil">
+            <img 
+              src="https://avatars.githubusercontent.com/u/120515160?v=4" 
+              className="profile" 
+              alt="imagem de perfil"
+            />
           </div>
         </div>
       </div>
