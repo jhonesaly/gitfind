@@ -25,6 +25,10 @@ function App() {
               <p>Descrição</p>
             </div>
           </div>
+          <hr />
+          <div>
+            <h4>Repositórios</h4>
+          </div>
         </div>
       </div>
     </div>
