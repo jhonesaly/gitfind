@@ -13,8 +13,20 @@ function App() {
     const userData = await fetch(`https://api.github.com/users/${user}`);
     const newUser = await userData.json();
 
-    console.log(newUser);
-  }
+    if(newUser.name){
+      const { avatar_url, name, bio, login } = newUser;
+      setCurrentUser({avatar_url, name, bio, login});
+
+      const reposData = await fetch(
+        `https://api.github.com/users/${user}/repos`
+      );
+      const newRepos = await reposData.json();
+
+      if (newRepos.length){
+        setRepos(newRepos);
+      }
+    }
+  };
 
   return (
     <div className="App">
@@ -31,19 +43,24 @@ function App() {
             />
             <button onClick={handleGetData}>Buscar</button>
           </div>
+          {currentUser?.name ? (
+          <>
           <div className="perfil">
-            <img 
-              src="https://avatars.githubusercontent.com/u/120515160?v=4" 
-              className="profile" 
-              alt="imagem de perfil"
-            />
-            <div>
-              <h3>Alyson Jhones</h3>
-              <span>@jhonesaly</span> 
-              <p>Descrição</p>
-            </div>
+          <img 
+            src={currentUser.avatar_url}
+            className="profile" 
+            alt="imagem de perfil"
+          />
+          <div>
+            <h3>{currentUser.name}</h3>
+            <span>@{currentUser.login}</span> 
+            <p>{currentUser.bio}</p>
           </div>
-          <hr />
+        </div>
+        <hr />
+        </>
+          ) : null}
+
           <div>
             <h4 className="repositorio">Repositórios</h4>
             <ItemList title="Rep1" description="Desc1"/>
