@@ -8,6 +8,9 @@ function App() {
       <Header />
       <div className="conteudo">
         <img src={background} className="background" alt="background app"/>
+        <div className="info">
+          Teste
+        </div>
       </div>
     </div>
   );

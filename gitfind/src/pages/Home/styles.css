@@ -11,3 +11,10 @@
     position: absolute;
     left: 0;
 }
+
+.info {
+    width: 60%;
+    margin-right: 90px;
+    margin-top: 40px;
+    color: #FFFFFF
+}
