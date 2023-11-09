@@ -20,8 +20,9 @@ function App() {
               alt="imagem de perfil"
             />
             <div>
-              <h3> Alyson Jhones </h3>
-              <p> Descrição </p>
+              <h3>Alyson Jhones</h3>
+              <span>@jhonesaly</span> 
+              <p>Descrição</p>
             </div>
           </div>
         </div>
