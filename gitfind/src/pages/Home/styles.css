@@ -22,10 +22,20 @@
 input {
     border-radius: 22px;
     min-width: 250px;
-    width: 80%;
-    margin-right: 12px;
+    width: 60%;
+    margin: 10px;
     border: 1px solid #999;
     background: transparent;
     font-size: 18px;
     padding: 10px;
+}
+
+button {
+    border-radius: 22px;
+    border: 1px solid #999;
+    background: #2D333B;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
 }
