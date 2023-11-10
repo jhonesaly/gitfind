@@ -6,7 +6,7 @@ import ItemList from "../../components/ItemList";
 
 function App() {
   const [user, setUser] = useState('');
-  const [currentUser, setCurrentUser] = useState(null);
+  const [gitUser, setGitUser] = useState(null);
   const [repos, setRepos] = useState(null);
 
   const handleGetData = async () => {
@@ -15,11 +15,9 @@ function App() {
 
     if(newUser.name){
       const { avatar_url, name, bio, login } = newUser;
-      setCurrentUser({avatar_url, name, bio, login});
+      setGitUser({avatar_url, name, bio, login});
 
-      const reposData = await fetch(
-        `https://api.github.com/users/${user}/repos`
-      );
+      const reposData = await fetch(`https://api.github.com/users/${user}/repos`);
       const newRepos = await reposData.json();
 
       if (newRepos.length){
@@ -43,30 +41,31 @@ function App() {
             />
             <button onClick={handleGetData}>Buscar</button>
           </div>
-          {currentUser?.name ? (
+          {gitUser?.name ? (
           <>
           <div className="perfil">
           <img 
-            src={currentUser.avatar_url}
+            src={gitUser.avatar_url}
             className="profile" 
             alt="imagem de perfil"
           />
           <div>
-            <h3>{currentUser.name}</h3>
-            <span>@{currentUser.login}</span> 
-            <p>{currentUser.bio}</p>
+            <h3>{gitUser.name}</h3>
+            <span>@{gitUser.login}</span> 
+            <p>{gitUser.bio}</p>
           </div>
         </div>
         <hr />
         </>
           ) : null}
-
+          {repos?.length ? (
           <div>
             <h4 className="repositorio">Repositórios:</h4>
-            <ItemList title="Rep1" description="Desc1"/>
-            <ItemList title="Rep2" description="Desc2"/>
-            <ItemList title="Rep3" description="Desc3"/>
+            {repos.map(repo => (
+            <ItemList title={repo.name} description={repo.description} />
+            ))}
           </div>
+          ) : null}
         </div>
       </div>
     </div>
