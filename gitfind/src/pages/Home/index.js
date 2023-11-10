@@ -62,7 +62,7 @@ function App() {
           ) : null}
 
           <div>
-            <h4 className="repositorio">Repositórios</h4>
+            <h4 className="repositorio">Repositórios:</h4>
             <ItemList title="Rep1" description="Desc1"/>
             <ItemList title="Rep2" description="Desc2"/>
             <ItemList title="Rep3" description="Desc3"/>
