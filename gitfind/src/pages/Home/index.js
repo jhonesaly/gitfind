@@ -3,7 +3,8 @@ import { Header } from "../../components/Header";
 import background from "../../assets/background.png";
 import "./styles.css";
 import ItemList from "../../components/ItemList";
-import { SearchButton } from "../../components/SearchButton"; 
+import { SearchButton } from "../../components/SearchButton";
+import { UserInput } from "../../components/UserInput"; 
 
 function App() {
   const [user, setUser] = useState('');
@@ -34,11 +35,9 @@ function App() {
         <img src={background} className="background" alt="imagem de fundo"/>
         <div className="info">
           <div>
-            <input 
-              name="usuario" 
-              value={user} 
-              onChange={(event) => setUser(event.target.value)} 
-              placeholder="@username"
+          <UserInput
+              value={user}
+              onChange={(event) => setUser(event.target.value)}
             />
             <SearchButton onClick={handleGetData} />
           </div>

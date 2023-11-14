@@ -19,19 +19,6 @@
     color: #FFFFFF
 }
 
-input {
-    color: #ffffff;
-    border-radius: 22px;
-    min-width: 250px;
-    width: 60%;
-    margin: 10px;
-    border: 1px solid #999;
-    background: transparent;
-    font-size: 18px;
-    padding: 10px;
-}
-
-
 .perfil {
     display: flex;
     margin: 10px;
