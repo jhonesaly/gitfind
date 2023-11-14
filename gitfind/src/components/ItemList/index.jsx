@@ -11,4 +11,4 @@ function ItemList({title, description}) {
   )
 }
 
-export default ItemList;
+export { ItemList} ;
