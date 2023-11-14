@@ -1,0 +1,15 @@
+button {
+    border-radius: 22px;
+    border: 1px solid #999;
+    background: #2D333B;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer; /* Altera o cursor para "pointer" por padrão */
+    transition: background 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+button:hover {
+    background: #1A1F25; /* Cor diferente quando o mouse passa por cima */
+}

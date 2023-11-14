@@ -31,15 +31,6 @@ input {
     padding: 10px;
 }
 
-button {
-    border-radius: 22px;
-    border: 1px solid #999;
-    background: #2D333B;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px;
-    margin: 10px;
-}
 
 .perfil {
     display: flex;
