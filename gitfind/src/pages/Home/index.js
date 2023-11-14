@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import background from "../../assets/background.png";
 import "./styles.css";
 import ItemList from "../../components/ItemList";
+import { SearchButton } from "../../components/SearchButton"; 
 
 function App() {
   const [user, setUser] = useState('');
@@ -39,7 +40,7 @@ function App() {
               onChange={(event) => setUser(event.target.value)} 
               placeholder="@username"
             />
-            <button onClick={handleGetData}>Buscar</button>
+            <SearchButton onClick={handleGetData} />
           </div>
           {gitUser?.name ? (
           <>
