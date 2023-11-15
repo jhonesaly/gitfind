@@ -56,14 +56,7 @@ function App() {
             <UserInfo user={gitUser} />
           </>
           ) : null}
-          {repos?.length ? (
-          <div>
-            <h4 className="repositorio">Repositórios:</h4>
-            {repos.map(repo => (
-            <ItemList title={repo.name} description={repo.description} />
-            ))}
-          </div>
-          ) : null}
+          {repos?.length ? <ItemList title="Repositórios" items={repos} /> : null}
         </div>
       </div>
     </div>

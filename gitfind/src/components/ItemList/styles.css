@@ -1,3 +1,10 @@
+.list-title {
+    font-size: 32px;
+    color: #FFF;
+    margin: 12px 0;
+    text-align: center;
+}
+
 .item-list {
     margin: 24px 0;
 }
