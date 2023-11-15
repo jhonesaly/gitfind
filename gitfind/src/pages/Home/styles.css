@@ -19,39 +19,6 @@
     color: #FFFFFF
 }
 
-.perfil {
-    display: flex;
-    margin: 10px;
-
-}
-
-.profile {
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
-    border: 2px solid #E5E5E5;
-    margin-right: 12px;
-}
-
-.perfil h3 {
-    color: #999999;
-    font-size: 36px;
-
-}
-
-.perfil span {
-    display: block;
-    color: #999999;
-    font-size: 24px;
-}
-
-.perfil p {
-    display: block;
-    color: #999999;
-    font-size: 24px;
-    margin-top: 10px;
-}
-
 .repositorio {
     font-size: 32px;
     color: #FFF;
