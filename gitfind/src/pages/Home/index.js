@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { ItemList } from "../../components/ItemList";
 import { SearchButton } from "../../components/SearchButton";
 import { UserInput } from "../../components/UserInput";
+import { UserInfo } from "../../components/UserInfo";
 
 import { api } from '../../services/api';
 
@@ -39,28 +40,16 @@ function App() {
         <img src={background} className="background" alt="imagem de fundo"/>
         <div className="info">
           <div>
-          <UserInput
-              value={user}
-              onChange={(event) => setUser(event.target.value)}
-            />
+            <UserInput
+                value={user}
+                onChange={(event) => setUser(event.target.value)}
+              />
             <SearchButton onClick={handleGetData} />
           </div>
           {gitUser?.name ? (
           <>
-          <div className="perfil">
-          <img 
-            src={gitUser.avatar_url}
-            className="profile" 
-            alt="imagem de perfil"
-          />
-          <div>
-            <h3>{gitUser.name}</h3>
-            <span>@{gitUser.login}</span> 
-            <p>{gitUser.bio}</p>
-          </div>
-        </div>
-        <hr />
-        </>
+            <UserInfo user={gitUser} />
+          </>
           ) : null}
           {repos?.length ? (
           <div>
