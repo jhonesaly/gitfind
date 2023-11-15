@@ -53,7 +53,7 @@ function App() {
               onChange={(event) => setUser(event.target.value)}
             />
           <SearchButton onClick={handleGetData} />
-          {loading && <p>Carregando...</p>}
+          {loading && <p className="loading-text">Carregando...</p>}
           {!loading && gitUser?.name && <UserInfo user={gitUser} />}
           {!loading && repos?.length && <ItemList title="Repositórios" items={repos} />}
         </div>
