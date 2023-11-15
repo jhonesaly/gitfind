@@ -17,20 +17,25 @@ function App() {
   const [repos, setRepos] = useState(null);
 
   const handleGetData = async () => {
-    const userResponse = await api.get(`${user}`);
-    const newUser = userResponse.data;
-
-    if(newUser.name){
-      const { avatar_url, name, bio, login } = newUser;
-      setGitUser({avatar_url, name, bio, login});
-
-      const reposResponse = await api.get(`${user}/repos`);
-      const newRepos = await reposResponse.data;
-
-      if (newRepos.length){
-        setRepos(newRepos);
+    try {
+      const userResponse = await api.get(`${user}`);
+      const newUser = userResponse.data;
+  
+      if(newUser.name){
+        const { avatar_url, name, bio, login } = newUser;
+        setGitUser({avatar_url, name, bio, login});
+  
+        const reposResponse = await api.get(`${user}/repos`);
+        const newRepos = await reposResponse.data;
+  
+        if (newRepos.length){
+          setRepos(newRepos);
+        }
       }
+    } catch (error) {
+      console.error('Erro ao obter dados:', error);
     }
+
   };
 
   return (
