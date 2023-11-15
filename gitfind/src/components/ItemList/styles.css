@@ -1,3 +1,7 @@
+.item-list {
+    margin: 24px 0;
+}
+
 .list-title {
     font-size: 32px;
     color: #FFF;
@@ -5,18 +9,16 @@
     text-align: center;
 }
 
-.item-list {
-    margin: 24px 0;
+.item {
+    height: 100px;
 }
 
-.item-list strong {
+.item strong {
     color: #539BF5;
     font-size: 24px;
-    margin: 24px 0;
 }
 
-.item-list p {
+.item p {
     color: #999;
-    font-size: 12px;
-    margin: 24px 0;
+    font-size: 16px;
 }
