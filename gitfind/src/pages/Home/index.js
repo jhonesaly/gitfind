@@ -15,9 +15,11 @@ function App() {
   const [user, setUser] = useState('');
   const [gitUser, setGitUser] = useState(null);
   const [repos, setRepos] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleGetData = async () => {
     try {
+      setLoading(true);
       const userResponse = await api.get(`${user}`);
       const newUser = userResponse.data;
   
@@ -34,6 +36,8 @@ function App() {
       }
     } catch (error) {
       console.error('Erro ao obter dados:', error);
+    } finally {
+      setLoading(false);
     }
 
   };
@@ -49,6 +53,7 @@ function App() {
               onChange={(event) => setUser(event.target.value)}
             />
           <SearchButton onClick={handleGetData} />
+          {loading && <p>Carregando...</p>}
           {gitUser?.name ? (<UserInfo user={gitUser} />) : null}
           {repos?.length ? <ItemList title="Repositórios" items={repos} /> : null}
         </div>
