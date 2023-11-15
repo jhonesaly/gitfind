@@ -54,8 +54,8 @@ function App() {
             />
           <SearchButton onClick={handleGetData} />
           {loading && <p>Carregando...</p>}
-          {gitUser?.name ? (<UserInfo user={gitUser} />) : null}
-          {repos?.length ? <ItemList title="Repositórios" items={repos} /> : null}
+          {!loading && gitUser?.name && <UserInfo user={gitUser} />}
+          {!loading && repos?.length && <ItemList title="Repositórios" items={repos} />}
         </div>
       </div>
     </div>
