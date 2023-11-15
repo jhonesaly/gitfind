@@ -5,7 +5,7 @@ import { ItemList } from "../../components/ItemList";
 import { SearchButton } from "../../components/SearchButton";
 import { UserInput } from "../../components/UserInput";
 
-import { api } from '../services/api';
+import { api } from '../../services/api';
 
 import "./styles.css"; 
 import background from "../../assets/background.png";
