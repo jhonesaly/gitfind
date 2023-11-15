@@ -1,10 +1,14 @@
 import {useState} from "react";
+
 import { Header } from "../../components/Header";
 import { ItemList } from "../../components/ItemList";
 import { SearchButton } from "../../components/SearchButton";
 import { UserInput } from "../../components/UserInput";
-import background from "../../assets/background.png";
+
+import { api } from '../services/api';
+
 import "./styles.css"; 
+import background from "../../assets/background.png";
 
 function App() {
   const [user, setUser] = useState('');
