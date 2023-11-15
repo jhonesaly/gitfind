@@ -16,15 +16,15 @@ function App() {
   const [repos, setRepos] = useState(null);
 
   const handleGetData = async () => {
-    const userData = await fetch(`https://api.github.com/users/${user}`);
-    const newUser = await userData.json();
+    const userResponse = await api.get(`${user}`);
+    const newUser = userResponse.data;
 
     if(newUser.name){
       const { avatar_url, name, bio, login } = newUser;
       setGitUser({avatar_url, name, bio, login});
 
-      const reposData = await fetch(`https://api.github.com/users/${user}/repos`);
-      const newRepos = await reposData.json();
+      const reposResponse = await api.get(`${user}/repos`);
+      const newRepos = await reposResponse.data;
 
       if (newRepos.length){
         setRepos(newRepos);
