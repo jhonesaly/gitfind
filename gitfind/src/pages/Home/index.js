@@ -44,18 +44,12 @@ function App() {
       <div className="conteudo">
         <img src={background} className="background" alt="imagem de fundo"/>
         <div className="info">
-          <div>
-            <UserInput
-                value={user}
-                onChange={(event) => setUser(event.target.value)}
-              />
-            <SearchButton onClick={handleGetData} />
-          </div>
-          {gitUser?.name ? (
-          <>
-            <UserInfo user={gitUser} />
-          </>
-          ) : null}
+          <UserInput
+              value={user}
+              onChange={(event) => setUser(event.target.value)}
+            />
+          <SearchButton onClick={handleGetData} />
+          {gitUser?.name ? (<UserInfo user={gitUser} />) : null}
           {repos?.length ? <ItemList title="Repositórios" items={repos} /> : null}
         </div>
       </div>
