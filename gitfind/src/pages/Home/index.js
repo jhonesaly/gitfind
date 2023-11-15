@@ -5,11 +5,11 @@ import { ItemList } from "../../components/ItemList";
 import { SearchButton } from "../../components/SearchButton";
 import { UserInput } from "../../components/UserInput";
 import { UserInfo } from "../../components/UserInfo";
+import { Background } from "../../components/Background";
 
 import { api } from '../../services/api';
 
 import "./styles.css"; 
-import background from "../../assets/background.png";
 
 function App() {
   const [user, setUser] = useState('');
@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="conteudo">
-        <img src={background} className="background" alt="imagem de fundo"/>
+        <Background />
         <div className="info">
           <UserInput
               value={user}

@@ -6,12 +6,6 @@
     justify-content: flex-end;
 }
 
-.background {
-    height: 100vh;
-    position: absolute;
-    left: 0;
-}
-
 .info {
     width: 60%;
     margin-right: 90px;
